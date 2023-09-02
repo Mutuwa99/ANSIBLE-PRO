@@ -4,8 +4,4 @@
   tasks:
     - name: Include Apache role
       include_role:
-        name: apache
-
-    - name: Include Python role
-      include_role:
-        name: python
+        name: docker

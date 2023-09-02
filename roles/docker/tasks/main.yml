@@ -1,0 +1,12 @@
+---
+- name: Install Docker
+  become: yes  # This task requires root privileges
+  apt:
+    name: docker.io
+    state: present
+
+- name: Start Docker service
+  become: yes
+  service:
+    name: docker
+    state: started
