@@ -1,5 +1,5 @@
 ---
-- name: Install Apache and Python
+- name: install and start docker
   hosts: webserver
   tasks:
     - name: Include Apache role

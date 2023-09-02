@@ -1,9 +1,16 @@
 ---
 - name: Install Docker
-  become: yes  # This task requires root privileges
-  apt:
-    name: docker.io
+  become: yes
+  yum:
+    name: docker
     state: present
+  notify: Start Docker
+
+- name: Enable Docker at boot
+  become: yes
+  systemd:
+    name: docker
+    enabled: yes
 
 - name: Start Docker service
   become: yes
