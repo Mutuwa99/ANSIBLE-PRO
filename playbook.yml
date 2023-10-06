@@ -2,6 +2,9 @@
 - name: install and start docker
   hosts: webserver
   tasks:
-    - name: Include Apache role
+    - name: install python
       include_role:
-        name: docker
+        name: python
+    - name: install apache
+      include_role:
+        name: apache
